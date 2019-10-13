@@ -1,5 +1,9 @@
+
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column; 
 }
 
 .App-logo {
@@ -7,16 +11,102 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #fff;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
   color: #09d3ac;
+}
+
+.quote-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#quote-box {
+  height: 100%;
+  display: flex; 
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.quote {
+  width: 45%;
+  min-height: 50vh;
+  border: solid #09d3ac;
+  border-radius: 20px;
+  justify-content: center;
+  
+}
+
+#button-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around; 
+  padding-bottom: 5px;
+}
+
+#main-quote {
+  flex-grow: 1;
+}
+
+#quote-footer {
+
+  flex-shrink: 0;
+}
+
+/* Normal white Button as seen on Google.com*/
+button {
+  color: #444444;
+  background: #F3F3F3;
+  border: 1px #DADADA solid;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 9pt;
+  outline: none;
+}
+
+button:hover {
+  border: 1px #C6C6C6 solid;
+  box-shadow: 1px 1px 1px #EAEAEA;
+  color: #333333;
+  background: #F7F7F7;
+  cursor: pointer; 
+}
+
+button:active {
+  box-shadow: inset 1px 1px 1px #DFDFDF;   
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 5px 10px;
+  font-size: 9pt;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+#author {
+  font-style: italic;
+  font-size: 0.9em;
 }

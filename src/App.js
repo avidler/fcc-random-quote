@@ -1,23 +1,18 @@
 import React from 'react';
+import Main from './Main'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-        <p>
-          Hello Everyone. Let the changes commit.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div>
+        <header className="App-header">
+            <h1>
+                Random Computing Quotes
+            </h1>
+        </header>
+    </div>
+      <Main />
     </div>
   );
 }
