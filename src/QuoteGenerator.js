@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import './App.css'
 
+//const axios = require('axios')
+
 class QuoteGenerator extends Component{
     constructor(){
         super()
@@ -16,31 +18,30 @@ class QuoteGenerator extends Component{
 
     componentDidMount() {
 
-        fetch('http://quotes.stormconsultancy.co.uk/quotes.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data)
-                this.setState({
-                    allQuotes: data,
-                    quote: data[0].quote,
-                    author: data[0].author
-                })
-                
-            })
-            .catch(err => {console.log(err)})
-            console.log(this.state)
+        this.generateQuote()
+            
         
     }
 
     generateQuote() {
         
-        const randNum = Math.floor(Math.random() * this.state.allQuotes.length)
-        const randQuote = this.state.allQuotes[randNum].quote
-        const randAuthor = this.state.allQuotes[randNum].author
-        this.setState({ quote: randQuote, author: randAuthor })
+        fetch('https://api.quotable.io/random')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            this.setState({
+                allQuotes: data,
+                quote: data.content,
+                author: data.author
+            })
+            console.log("mounted",this.state)
+            
+        })
+        .catch(err => {console.log(err)})
     }
 
     handleClick(event){
+        console.log(this.state)
         event.preventDefault()
         this.generateQuote()
     }
@@ -49,6 +50,7 @@ class QuoteGenerator extends Component{
 
 
     render(){
+        console.log("here it is",this.state)
         return(
             <>
                 <div id="quote-box">

@@ -8,7 +8,7 @@ function App() {
      <div>
         <header className="App-header">
             <h1>
-                Random Computing Quotes
+                Amazing Quotes
             </h1>
         </header>
     </div>
